@@ -1,15 +1,32 @@
-const numero1 = document.getElementById("num1")
-const numero2 = document.getElementById("num2")
-const operacion = document.getElementById("operador")
-const calculo = document.getElementById("calcular")
-const respuesta = document.getElementById("resultado")
+const txtnumero1 = document.getElementById("num1")
+const txtnumero2 = document.getElementById("num2")
+const txtoperacion = document.getElementById("operacion")
+const txtcalculo = document.getElementById("calcular")
+const txtrespuesta = document.getElementById("resultado")
 
 function calculadora() {
-    if (operador == "+" || operador == "-" || operador == "*" || operador == "/") {
-        console.log("calculo posible!")
+    const operacion = txtoperacion.value
+    const num1 = parseFloat(txtnumero1.value)
+    const num2 = parseFloat(txtnumero2.value)
 
+
+
+    if ((operacion == "+" || operacion == "-" || operacion == "*" || operacion == "/") && !isNaN(num1) && !isNaN(num2)) {
+        let resultadop;
+        if (operacion == "+") {
+            resultadop = num1 + num2
+        } else if (operacion == "-") {
+            resultadop = num1 - num2
+        } else if (operacion == "*") {
+            resultadop = num1 * num2
+
+        } else if (operacion == "/") {
+            resultadop = num1 / num2
+
+        }
+        txtrespuesta.innerText = resultadop
     } else {
-        console.log("asegurate de completar correctamente los campos")
+        txtrespuesta.innerText = "Asegurate de ingresar los campos correctamente"
     }
 
 }

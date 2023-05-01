@@ -24,8 +24,10 @@ function calculadora() {
             resultadop = num1 / num2
 
         }
+        txtrespuesta.style = "color:black"
         txtrespuesta.innerText = resultadop
     } else {
+        txtrespuesta.style = "color:red"
         txtrespuesta.innerText = "Asegurate de ingresar los campos correctamente"
     }
 
